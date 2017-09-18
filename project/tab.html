@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>demo</title>
+
+<style type="text/css"> 
+*{ margin:0; padding:0;}
+body { font:12px/1.8 Arial; color:#666;}
+h1.tit-h1 { font-size:38px; text-align:center; margin:30px 0 15px; color:#f60;}
+.wrap{border:1px dashed #ccc; background:#f8f8f8; padding:20px;}
+
+/* 本案例需要的css样式 */
+ul,li{ list-style:none;}
+.tab{ width:888px; margin:0 auto 50px;}
+.tab-hd { background:#F93; overflow:hidden; zoom:1;}
+.tab-hd li{ float:left; width:296px; color:#fff; text-align:center; cursor:pointer;}
+.tab-hd li.active{ background:#F60;}
+.tab-bd li{display:none; padding:20px; border:1px solid #ddd; border-top:0 none; font-size:24px;}
+.tab-bd li.thisclass{ display:list-item;}
+</style> 
+
+</head>
+<body>
+
+<h1 class="tit-h1">demo</h1>
+
+<div class="wrap">
+
+	<div class="tab">
+		<ul class="tab-hd"><li class="active"><li>首页</li><li>成绩查询</li><li>设置</li></ul>
+		<ul class="tab-bd"><li class="thisclass">哈哈</li><li>？？？？？？</li><li>NBA</li></ul>
+	</div>
+    
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    function tabs(tabTit,on,tabCon){
+        $(tabTit).children().hover(function(){
+            $(this).addClass(on).siblings().removeClass(on);
+            var index = $(tabTit).children().index(this);
+           	$(tabCon).children().eq(index).show().siblings().hide();
+    	});
+	};
+    tabs(".tab-hd","active",".tab-bd");
+});
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p></p>
+<p></p>
+</div>
+</body> 
+</html>
